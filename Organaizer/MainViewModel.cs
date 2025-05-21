@@ -29,7 +29,7 @@ namespace Organaizer
         {
             try
             {
-                List<TaskItem> tasks = _selectedSortOption switch
+                List<TaskItem> tasks = SelectedSortOption switch
                 {
                     "По приоритету" => _dbContext.GetAllTasksSortedByPriority(),
                     "По дате" => _dbContext.GetAllTasksSortedByDate(),

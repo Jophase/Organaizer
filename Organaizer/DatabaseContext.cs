@@ -30,6 +30,7 @@ public class DatabaseContext
                     Priority TEXT,
                     Category TEXT,
                     IsCompleted INTEGER DEFAULT 0
+                    
                 )";
             command.ExecuteNonQuery();
         }
@@ -53,6 +54,7 @@ public class DatabaseContext
             command.Parameters.AddWithValue("@priority", task.Priority);
             command.Parameters.AddWithValue("@category", task.Category ?? "");
             command.Parameters.AddWithValue("@isCompleted", task.IsCompleted ? 1 : 0);
+            
 
             command.ExecuteNonQuery();
         }
@@ -167,6 +169,7 @@ public class DatabaseContext
                     Category = @category,
                     IsCompleted = @isCompleted
                 WHERE Id = @id";
+            
 
             command.Parameters.AddWithValue("@id", task.Id);
             command.Parameters.AddWithValue("@title", task.Title);
